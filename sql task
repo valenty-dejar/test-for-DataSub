@@ -7,16 +7,16 @@ b) написать SQL запрос, который выводит назван
        FROM Students s, Exams e
     WHERE s.StudentsId = e.StudentsId
            AND s.StudentsId IN (SELECT StudentsId
-                                                    FROM Exams
-                                                  WHERE Result < 3
+                                  FROM Exams
+                                 WHERE Result < 3
 			          GROUP BY StudentsId
 			          HAVING COUNT(*) > 2)
 b) SELECT s.Group
        FROM Students s, Exams e
     WHERE s.StudentsId = e.StudentsId
            AND s.StudentsId IN (SELECT StudentsId
-                                                    FROM Exams
-                                                  WHERE Result < 3
+                                  FROM Exams
+                                 WHERE Result < 3
 			          GROUP BY StudentsId
 			          HAVING COUNT(*) > 2)
     GROUP BY s.Group
